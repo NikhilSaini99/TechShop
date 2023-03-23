@@ -22,7 +22,7 @@ const Cart = () => {
     return (
       <>
         <Navbar />
-        <Typography variant='h2' textAlign="center" mt='5rem'>Empty Cart</Typography>
+        <Typography variant='h2' textAlign="center" mt='8rem'>Empty Cart</Typography>
       </>
     )
   }
@@ -69,7 +69,7 @@ const Cart = () => {
   return (
     <>
       <Navbar />
-      <Stack direction="row" justifyContent="center" alignItems="center" spacing={1} mt='5rem'>
+      <Stack direction="row" justifyContent="center" alignItems="center" spacing={1} mt='8rem'>
         <ShoppingCartCheckoutIcon sx={{ fontSize: '3rem' }} />
         <Typography variant='h2' textAlign="center" sx={{ fontSize: { xs: '2rem' } }}
           gutterBottom={false}>My Cart</Typography>
@@ -120,7 +120,8 @@ const Cart = () => {
             </Grid>
           ))}
         </Grid>
-        <Box sx={{ width: { md: '20%', display: 'flex', flexDirection: 'column', alignItems: 'center',justifyContent:'center' } }}>
+        <Box sx={{ width: { md: '20%' }, marginTop:'0.5rem',marginBottom:'0.5rem', marginRight:'1rem', marginLeft:'1rem',border:'1px solid rgba(20,20,20,0.1)',height:'200px',backgroundColor:'rgba(20,20,20,0.1)',borderRadius:'5px' }}>
+        <Box sx={{display:"flex",flexDirection:'column',gap:'1rem', justifyContent:'center',alignItems:'center',height:'100%'}}>
           <Typography variant='body1' sx={{ fontWeight: 'bold' }}>{`Subtotal (${cartItems.reduce((totalqty, item) => totalqty + item.qty, 0)} item):`} &#x20b9; {cartItems.reduce((total, item) => total + item.qty * item.price, 0)}
           </Typography>
           <Button variant="contained" size='small'
@@ -129,6 +130,7 @@ const Cart = () => {
               '&:hover': { backgroundColor: '#F7CA00' }
             }}
             onClick={handleCheckout}>Proceed to Checkout</Button>
+        </Box>
         </Box>
       </Box>
 
